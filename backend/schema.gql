@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Banner {
+  _id: ID!
+  title: String!
+  impressions: Int!
+  clicks: Int!
+  costs: Int!
+}
+
+type Query {
+  banners: [Banner!]!
+  banner(input: FindBanner!): Banner!
+  delete(input: FindBanner!): Banner!
+}
+
+input FindBanner {
+  _id: String!
+}
+
+type Mutation {
+  create(input: NewBanner!): Banner!
+  change: Banner!
+}
+
+input NewBanner {
+  title: String!
+  impressions: Int!
+  clicks: Int!
+  costs: Int!
+}
+
+type Subscription {
+  bannerChanged(title: String!): Banner!
+}
